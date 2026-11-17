@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. Header dính */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 15px 30px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 2. Nội dung tạo thanh cuộn */
+.content {
+  height: 2000px;
+  padding: 30px;
+  background-color: #f4f4f4;
+}
+
+/* 3. Nút lên đầu trang */
+.btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  
+  width: 50px;
+  height: 50px;
+  background-color: #ff6600;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 22px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.btn-top:hover {
+  transform: translateY(-5px);
+}
+
+/* 4. Lớp phủ toàn màn hình */
+.overlay {
+  position: fixed;
+  inset: 0; /* Viết tắt chuẩn hiện đại của top: 0; right: 0; bottom: 0; left: 0; */
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999; /* Đè lên header và btn-top */
+  
+  /* Mẹo: Khi làm xong header/btn-top, bạn mở comment dòng dưới để test cuộn trang nhé */
+  /* display: none; */
+}
+
+/* 5. Popup Modal */
+.modal {
+  position: fixed; /* Hoặc absolute đều được vì nó nằm trong .overlay đã fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+/* 6. Nút đóng Modal */
+.btn-close {
+  position: absolute; /* Lấy .modal (đang là fixed) làm mốc tọa độ */
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
