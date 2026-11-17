@@ -53,17 +53,16 @@
 /* 4. Lớp phủ toàn màn hình */
 .overlay {
   position: fixed;
-  inset: 0; /* Viết tắt chuẩn hiện đại của top: 0; right: 0; bottom: 0; left: 0; */
+  inset: 0; left: 0; 
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 999; /* Đè lên header và btn-top */
+  z-index: 999; 
   
-  /* Mẹo: Khi làm xong header/btn-top, bạn mở comment dòng dưới để test cuộn trang nhé */
-  /* display: none; */
+ 
 }
 
 /* 5. Popup Modal */
 .modal {
-  position: fixed; /* Hoặc absolute đều được vì nó nằm trong .overlay đã fixed */
+  position: fixed; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -76,7 +75,7 @@
 
 /* 6. Nút đóng Modal */
 .btn-close {
-  position: absolute; /* Lấy .modal (đang là fixed) làm mốc tọa độ */
+  position: absolute; 
   top: 10px;
   right: 10px;
   background: transparent;
